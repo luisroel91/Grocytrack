@@ -12,6 +12,8 @@ django-rest-swagger = "*"
 django-cors-headers = "*"
 django-import-export = "*"
 pillow = "*"
+psycopg2 = "*"
+djangorestframework-simplejwt = "*"
 
 [requires]
 python_version = "3.7"
