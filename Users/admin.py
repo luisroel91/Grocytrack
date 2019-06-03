@@ -7,7 +7,7 @@ from .models import ApplicationUser
 
 
 # Define our user admin
-class ApplicationUser(UserAdmin):
+class ApplicationUserAdmin(UserAdmin):
 
     # Select user model
     model = ApplicationUser
@@ -30,8 +30,80 @@ class ApplicationUser(UserAdmin):
         (
             None, {
                 'fields': (
-                    ''
+                    'username',
+                    'email',
+                    'password',
+                )
+            }
+        ),
+        (
+            'Permissions', {
+                'fields': (
+                    'is_active',
+                    'is_staff',
+                    'is_superuser',
+                )
+            }
+        ),
+        (
+            'Personal Info', {
+                'fields': (
+                    'date_joined'
                 )
             }
         )
     )
+
+    # Define fieldsets used to create user
+    add_fieldsets = (
+        (
+            None, {
+                'fields': (
+                    'username',
+                    'email',
+                    'password1',
+                    'password2'
+                )
+            }
+        ),
+        (
+            'Permissions', {
+                'fields': (
+                    'is_active',
+                    'is_staff',
+                    'is_superuser',
+                )
+            }
+        ),
+        (
+            'Personal Info', {
+                'fields': (
+                    'date_of_birth',
+                )
+            }
+        )
+    )
+
+    # Define fields we use for searching in admin
+    search_fields = (
+        'username',
+        'email',
+        'date_joined',
+    )
+
+    # Set default ordering from date_joined
+    ordering = (
+        'date_joined'
+    )
+
+    # Pass along readonly fields and set username/email/date_joined
+    # as read only fields
+    def get_readonly_fields(self, request, obj=None):
+        if obj:
+            return self.readonly_fields + ('username', 'email', 'date_joined')
+        return self.readonly_fields
+
+
+# Register our user model and user model admin with admin site
+admin.site.register(ApplicationUser, ApplicationUserAdmin)
+

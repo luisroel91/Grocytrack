@@ -40,10 +40,10 @@ class CustomUserManager(BaseUserManager):
 
         # Validate that permission flags have been set
         if extra_fields.get('is_staff') is not True:
-            raise ValueError(_('Superuser must have staff flag.'))
+            raise ValueError('Superuser must have staff flag.')
 
         if extra_fields.get('is_superuser') is not True:
-            raise ValueError(_('Superuser must have SU flag.'))
+            raise ValueError('Superuser must have SU flag.')
 
         return self.create_user(
             username,
