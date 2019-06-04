@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    # Generate schema as Swagger
+    'rest_framework_swagger',
     # Integrate Django auth
     'djoser',
     'rest_framework_simplejwt',
@@ -147,6 +149,20 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
     )
 }
+
+# Swagger settings
+
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        'api_key': {
+            'type': 'apiKey',
+            'in': 'header',
+            'name': 'Authorization',
+        }
+    }
+}
+
+
 
 # SimpleJWT settings
 

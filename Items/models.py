@@ -15,11 +15,12 @@ class GroceryItem(models.Model):
         max_digits=100,
     )
 
-    UPC = models.CharField(
+    upc = models.CharField(
+        verbose_name='UPC',
         max_length=12,
         unique=True,
         editable=False,
-        validators=[MinLengthValidator(12)]
+        validators=[MinLengthValidator(12)],
     )
 
     # Set string representation

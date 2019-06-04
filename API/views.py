@@ -1,36 +1,20 @@
 # Import DRF generic views
 from rest_framework.viewsets import ModelViewSet
-from rest_framework import generics
 from rest_framework import permissions
 
 # Import our models
 
-from Users.models import ApplicationUser
 from Items.models import GroceryItem
 from Lists.models import GroceryItemList
 
 # Import our serializers
 
-from .serializers import ApplicationUserSerializer, GroceryItemSerializer, GroceryItemListSerializer
+from .serializers import GroceryItemSerializer, GroceryItemListSerializer
 
 # Generic views for now
 
 
-class ApplicationUserViewSet(ModelViewSet):
-    """
-    get:
-    Return a User via their username
-
-    post:
-    Create a User
-    """
-    queryset = ApplicationUser.objects.all()
-    serializer_class = ApplicationUserSerializer
-
-    lookup_field = 'username'
-
-
-class GroceryItemView(generics.ListAPIView):
+class GroceryItemViewSet(ModelViewSet):
     """
     get:
     Return a list of all existing items
@@ -42,25 +26,7 @@ class GroceryItemView(generics.ListAPIView):
     permission_classes = (permissions.IsAuthenticated,)
 
 
-class GroceryItemDetailView(generics.RetrieveUpdateAPIView):
-    """
-    get:
-    Return a particular item using its UPC
-
-    put:
-    Create a particular item using its UPC
-
-    patch:
-    Update item name or price using its UPC
-
-    """
-    lookup_field = 'UPC'
-
-    queryset = GroceryItem.objects.all()
-    serializer_class = GroceryItemSerializer
-
-
-class GroceryItemListDetailView(generics.RetrieveUpdateDestroyAPIView):
+class GroceryItemListViewSet(ModelViewSet):
     """
     get:
     Return list using its ID
@@ -76,6 +42,8 @@ class GroceryItemListDetailView(generics.RetrieveUpdateDestroyAPIView):
     """
     queryset = GroceryItemList.objects.all()
     serializer_class = GroceryItemListSerializer
+
+    permission_classes = (permissions.IsAuthenticated,)
 
 
 

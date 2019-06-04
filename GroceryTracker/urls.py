@@ -19,11 +19,18 @@ from django.urls import path, include
 # Generate schema from our models + views
 from rest_framework.schemas import get_schema_view
 
+# Import renderer to render generated schema as Swagger
+from rest_framework_swagger.views import get_swagger_view
+
+schema_view = get_swagger_view(
+    title="GroceryTracker API",
+)
+
+
+
 """
 Routing is controlled at the app level with the exception
 of the DRF api-auth routes needed for the browsable API
-
-Default route is to Swagger view
 """
 
 urlpatterns = [
@@ -31,13 +38,15 @@ urlpatterns = [
     # Auth for browseable API
     path('api-auth/', include('rest_framework.urls')),
 
-    # DRF Schema view
-    path('schema', get_schema_view()),
+    # Swagger view
+    path('', schema_view, name="schema"),
+
+    # API endpoints
+    path('', include('API.urls')),
 
     # Auth endpoints
     path('', include('djoser.urls')),
     path('', include('djoser.urls.jwt')),
 
-    # API endpoints
-    path('', include('API.urls')),
+
 ]

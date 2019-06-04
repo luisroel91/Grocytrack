@@ -24,9 +24,9 @@ class GroceryItemSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = GroceryItem
-        fields = '__all__'
+        fields = ('name', 'price', 'upc')
 
-    lookup_field = 'name'
+    lookup_field = 'upc'
 
 
 # Serializer for GroceryItemLists

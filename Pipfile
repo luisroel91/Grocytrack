@@ -14,7 +14,6 @@ django-import-export = "*"
 pillow = "*"
 djangorestframework-simplejwt = "*"
 django-extensions = "*"
-drf-yasg = "*"
 djoser = "*"
 social-auth-app-django = "*"
 
