@@ -37,6 +37,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'rest_framework_simplejwt',
+    # JWT blacklist app
+    'rest_framework_simplejwt.token_blacklist',
+    'drf_yasg',
+    'django_extensions',
+    'Users',
+    'Items',
+    'Lists',
+    'API',
+
 ]
 
 MIDDLEWARE = [
@@ -119,3 +130,39 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Set custom user model
+
+AUTH_USER_MODEL = 'Users.ApplicationUser'
+
+# Django Rest Framework settings
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    )
+}
+
+# Django Swagger settings
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        'Bearer': {
+            'type': 'apiKey',
+            'description': 'JWT Access Token',
+            'name': 'Authorization',
+            'in': 'header',
+        }
+    },
+}
+LOGIN_URL = 'rest_framework:login'
+LOGOUT_URL = 'rest_framework:logout'
+
+# SimpleJWT settings
+
+SIMPLE_JWT = {
+    'ALGORITHM': 'HS512'
+}

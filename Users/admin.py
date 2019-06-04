@@ -48,7 +48,7 @@ class ApplicationUserAdmin(UserAdmin):
         (
             'Personal Info', {
                 'fields': (
-                    'date_joined'
+                    'date_joined',
                 )
             }
         )
@@ -62,7 +62,7 @@ class ApplicationUserAdmin(UserAdmin):
                     'username',
                     'email',
                     'password1',
-                    'password2'
+                    'password2',
                 )
             }
         ),
@@ -93,7 +93,7 @@ class ApplicationUserAdmin(UserAdmin):
 
     # Set default ordering from date_joined
     ordering = (
-        'date_joined'
+        'date_joined',
     )
 
     # Pass along readonly fields and set username/email/date_joined

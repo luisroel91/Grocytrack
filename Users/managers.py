@@ -48,6 +48,7 @@ class CustomUserManager(BaseUserManager):
         return self.create_user(
             username,
             email,
+            sales_tax_rate,
             password,
             **extra_fields
         )

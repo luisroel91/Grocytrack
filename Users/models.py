@@ -42,6 +42,7 @@ class ApplicationUser(AbstractBaseUser, PermissionsMixin):
     sales_tax_rate = models.DecimalField(
         verbose_name='Sales Tax',
         decimal_places=2,
+        max_digits=10,
         editable=True,
     )
 
@@ -49,7 +50,7 @@ class ApplicationUser(AbstractBaseUser, PermissionsMixin):
     USERNAME_FIELD = 'username'
     EMAIL_FIELD = 'email'
 
-    REQUIRED_FIELDS = ['email']
+    REQUIRED_FIELDS = ['email', 'sales_tax_rate']
 
     # Set object manager
     objects = CustomUserManager()
