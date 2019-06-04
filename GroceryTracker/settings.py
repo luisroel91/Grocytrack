@@ -152,7 +152,7 @@ REST_FRAMEWORK = {
 
 SIMPLE_JWT = {
     'ALGORITHM': 'HS512',
-    'AUTH_HEADER_TYPES': ('JWT',),
+    'AUTH_HEADER_TYPES': ('JWT', 'Bearer'),
 }
 
 # Djoser settings
