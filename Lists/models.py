@@ -31,5 +31,3 @@ class GroceryItemList(TimeStampedModel):
     total_items = models.IntegerField(
         verbose_name='Total Items',
     )
-
-    owner = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='lists', on_delete=models.CASCADE)

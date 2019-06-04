@@ -1,4 +1,5 @@
 # Import DRF generic views
+from rest_framework.viewsets import ModelViewSet
 from rest_framework import generics
 from rest_framework import permissions
 
@@ -15,37 +16,13 @@ from .serializers import ApplicationUserSerializer, GroceryItemSerializer, Groce
 # Generic views for now
 
 
-class ApplicationUserListView(generics.ListCreateAPIView):
+class ApplicationUserViewSet(ModelViewSet):
     """
     get:
     Return a User via their username
 
     post:
     Create a User
-    """
-    queryset = ApplicationUser.objects.all()
-    serializer_class = ApplicationUserSerializer
-
-    lookup_field = 'username'
-
-
-class ApplicationUserDetailView(generics.ListAPIView):
-    """
-    get:
-    Return a User via their username
-    """
-    queryset = ApplicationUser.objects.all()
-    serializer_class = ApplicationUserSerializer
-
-    lookup_field = 'username'
-
-    permission_classes = (permissions.IsAuthenticated,)
-
-
-class ApplicationUserDeleteView(generics.DestroyAPIView):
-    """
-    delete:
-    Delete a User
     """
     queryset = ApplicationUser.objects.all()
     serializer_class = ApplicationUserSerializer

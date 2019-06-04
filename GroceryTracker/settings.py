@@ -38,10 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    # Integrate Django auth
+    'djoser',
     'rest_framework_simplejwt',
     # JWT blacklist app
     'rest_framework_simplejwt.token_blacklist',
-    'drf_yasg',
     'django_extensions',
     'Users',
     'Items',
@@ -147,22 +148,15 @@ REST_FRAMEWORK = {
     )
 }
 
-# Django Swagger settings
-SWAGGER_SETTINGS = {
-    'SECURITY_DEFINITIONS': {
-        'Bearer': {
-            'type': 'apiKey',
-            'description': 'JWT Access Token',
-            'name': 'Authorization',
-            'in': 'header',
-        }
-    },
-}
-LOGIN_URL = 'rest_framework:login'
-LOGOUT_URL = 'rest_framework:logout'
-
 # SimpleJWT settings
 
 SIMPLE_JWT = {
-    'ALGORITHM': 'HS512'
+    'ALGORITHM': 'HS512',
+    'AUTH_HEADER_TYPES': ('JWT',),
+}
+
+# Djoser settings
+
+DJOSER = {
+    'TOKEN_MODEL': None,
 }
