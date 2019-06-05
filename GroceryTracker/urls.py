@@ -16,17 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-# Generate schema from our models + views
-from rest_framework.schemas import get_schema_view
 
-# Import renderer to render generated schema as Swagger
+# Import renderer to render schema as Swagger
 from rest_framework_swagger.views import get_swagger_view
 
 schema_view = get_swagger_view(
     title="GroceryTracker API",
 )
-
-
 
 """
 Routing is controlled at the app level with the exception
@@ -34,7 +30,9 @@ of the DRF api-auth routes needed for the browsable API
 """
 
 urlpatterns = [
+    # Built in admin
     path('admin/', admin.site.urls),
+
     # Auth for browseable API
     path('api-auth/', include('rest_framework.urls')),
 
