@@ -32,6 +32,7 @@ class ApplicationUserAdmin(UserAdmin):
                 'fields': (
                     'username',
                     'email',
+                    'sales_tax_rate',
                     'password',
                 )
             }
@@ -61,6 +62,7 @@ class ApplicationUserAdmin(UserAdmin):
                 'fields': (
                     'username',
                     'email',
+                    'sales_tax_rate',
                     'password1',
                     'password2',
                 )
@@ -78,7 +80,7 @@ class ApplicationUserAdmin(UserAdmin):
         (
             'Personal Info', {
                 'fields': (
-                    'date_of_birth',
+                    'date_joined',
                 )
             }
         )
@@ -100,7 +102,7 @@ class ApplicationUserAdmin(UserAdmin):
     # as read only fields
     def get_readonly_fields(self, request, obj=None):
         if obj:
-            return self.readonly_fields + ('username', 'email', 'date_joined')
+            return self.readonly_fields + ('username', 'date_joined')
         return self.readonly_fields
 
 

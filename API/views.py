@@ -15,11 +15,6 @@ from .serializers import GroceryItemSerializer, GroceryItemListSerializer
 
 
 class GroceryItemViewSet(ModelViewSet):
-    """
-    get:
-    Return a list of all existing items
-    """
-
     queryset = GroceryItem.objects.all()
     serializer_class = GroceryItemSerializer
 

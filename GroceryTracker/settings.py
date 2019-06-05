@@ -159,10 +159,12 @@ SWAGGER_SETTINGS = {
             'in': 'header',
             'name': 'Authorization',
         }
-    }
+    },
+    # 'USE_SESSION_AUTH': False,
 }
 
-
+LOGIN_URL = 'rest_framework:login'
+LOGOUT_URL = 'rest_framework:logout'
 
 # SimpleJWT settings
 

@@ -39,7 +39,7 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
 
     # Swagger view
-    path('', schema_view, name="schema"),
+    path('swagger/', schema_view),
 
     # API endpoints
     path('', include('API.urls')),

@@ -15,8 +15,7 @@ class ApplicationUserSerializer(serializers.ModelSerializer):
         model = ApplicationUser
         fields = ('username', 'email', 'sales_tax_rate')
 
-    lookup_field = 'username'
-
+    lookup_field = "id"
 
 # Serializer for GroceryItems
 
