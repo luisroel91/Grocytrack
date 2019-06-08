@@ -1,9 +1,10 @@
 import { combineReducers } from "redux";
+import { connectRouter } from "connected-react-router";
 
 import loadingAnimationReducer from "./loadingAnimationReducer";
 
-const rootReducer = combineReducers({
-  isVisible: loadingAnimationReducer
-});
-
-export default rootReducer;
+export default history =>
+  combineReducers({
+    isVisible: loadingAnimationReducer,
+    router: connectRouter(history)
+  });
