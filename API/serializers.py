@@ -19,6 +19,7 @@ class ApplicationUserSerializer(serializers.ModelSerializer):
 
 # Serializer for GroceryItems
 
+
 class GroceryItemSerializer(serializers.ModelSerializer):
 
     class Meta:

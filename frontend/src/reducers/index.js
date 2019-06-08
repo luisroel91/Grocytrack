@@ -1,11 +1,9 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from "redux";
 
-import loadingAnimationReducer from './loadingAnimationReducer';
+import loadingAnimationReducer from "./loadingAnimationReducer";
 
-const rootReducer = combineReducers(
-    {
-        isVisible: loadingAnimationReducer,
-    }
-)
+const rootReducer = combineReducers({
+  isVisible: loadingAnimationReducer
+});
 
 export default rootReducer;
