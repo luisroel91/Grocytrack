@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-import loadingAnimationReducer from '../reducers/loadingAnimationReducer';
+import loadingAnimationReducer from './loadingAnimationReducer';
 
 const rootReducer = combineReducers(
     {

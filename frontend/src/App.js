@@ -6,17 +6,7 @@ import HeaderLogo from './components/HeaderLogo';
 import IntroParagraph from './components/Intro';
 import SignUpForm from './components/SignUpForm';
 
-import { } from "./actions/simpleAction";
-
 import './App.scss';
-
-const mapStateToProps = state => ({
-    ...state
-});
-
-const mapDispatchToProps = dispatch => ({
-    simpleAction: () => dispatch(simpleAction())
-});
 
 class App extends React.Component {
 
@@ -31,4 +21,4 @@ class App extends React.Component {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;
