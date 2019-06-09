@@ -4,11 +4,14 @@
   "private": true,
   "dependencies": {
     "axios": "^0.19.0",
+    "bulma": "^0.7.5",
+    "bulmaswatch": "^0.7.2",
     "connected-react-router": "^6.4.0",
     "history": "^4.9.0",
     "node-sass": "^4.12.0",
     "prettier": "^1.18.2",
     "react": "^16.8.6",
+    "react-cosmos": "^5.0.0-alpha.9",
     "react-dom": "^16.8.6",
     "react-pose": "^4.0.8",
     "react-pose-text": "^3.1.0",
@@ -23,7 +26,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cosmos": "cosmos",
+    "cosmos:export": "cosmos-export"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -39,5 +44,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-cosmos-fetch-proxy": "^4.8.2",
+    "react-cosmos-redux-proxy": "^4.8.2",
+    "react-cosmos-router-proxy": "^4.8.2"
   }
 }
