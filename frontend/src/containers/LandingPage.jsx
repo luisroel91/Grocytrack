@@ -16,8 +16,9 @@ class LandingPage extends React.Component {
           <IntroParagraph />
           <SignUpForm />
         </div>
+        <br />
         <div>
-          <PosedLink href={"/login"}>Signed up? Login here</PosedLink>
+          <PosedLink href={"/login"}>Already signed up?</PosedLink>
         </div>
       </React.Fragment>
     );

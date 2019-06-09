@@ -6,15 +6,17 @@ import LoginForm from "../components/LoginForm.jsx";
 
 const wordPoses = {
   visible: {
-    opacity: 1
+    opacity: 1,
+    transition: {
+      duration: 900,
+      ease: "easeIn"
+    }
   },
   hidden: {
-    opacity: 0
-  },
-  transition: {
-    ease: "linear",
-    default: {
-      duration: "300"
+    opacity: 0,
+    transition: {
+      duration: 900,
+      ease: "easeOut"
     }
   }
 };

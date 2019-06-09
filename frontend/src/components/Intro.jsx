@@ -1,37 +1,92 @@
 import React from "react";
+import SplitText from "react-pose-text";
+
+const wordPoses = {
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 900,
+      ease: "easeIn"
+    }
+  },
+  hidden: {
+    opacity: 0,
+    transition: {
+      duration: 900,
+      ease: "easeOut"
+    }
+  }
+};
 
 class IntroParagraph extends React.Component {
+  state = {
+    isVisible: false
+  };
+
+  componentDidMount() {
+    this.setState({
+      isVisible: true
+    });
+  }
+
   render() {
     return (
       <div>
-        <p>
+        <SplitText
+          wordPoses={wordPoses}
+          pose={this.state.isVisible ? "visible" : "hidden"}
+        >
           Tired of using your phone calculator to keep track of your grocery
           trips?
-          <br />
+        </SplitText>
+        <br />
+        <SplitText
+          wordPoses={wordPoses}
+          pose={this.state.isVisible ? "visible" : "hidden"}
+        >
           Tired of pressing the heckin' clear button and not remembering how
           much your cart is worth?
-          <br />
-          Want to avoid the uncomfortable situation of getting to the register
-          and not knowing what the bill will be?
-          <br />
-          Want to keep better track of your grocery purchases and food habits?
-        </p>
-        <p>
-          Cool! Us too!
-          <br />
-          <br />
-          So <strong>we</strong> made this...
-          <br />
-          <br />
-          For <strong>you</strong>!!!
-        </p>
-        <p>
-          But also because...if we were afraid of what we'd do...
-          <br />
-          if we pressed the clear button accidentally <br />
-          <br />
-          <strong>one...more...time :)</strong>
-        </p>
+        </SplitText>
+        <br />
+        <SplitText
+          wordPoses={wordPoses}
+          pose={this.state.isVisible ? "visible" : "hidden"}
+        >
+          Want to avoid the uncomfortable situation at the register of not
+          knowing how much the bill will be?
+        </SplitText>
+        <br />
+        <SplitText
+          wordPoses={wordPoses}
+          pose={this.state.isVisible ? "visible" : "hidden"}
+        >
+          Want to keep better track of your grocery purchases and food habits ?
+        </SplitText>
+        <br />
+        <br />
+        <SplitText
+          wordPoses={wordPoses}
+          pose={this.state.isVisible ? "visible" : "hidden"}
+        >
+          Cool! Us too! So we made this...For you!
+        </SplitText>
+        <br />
+        <br />
+        <SplitText
+          wordPoses={wordPoses}
+          pose={this.state.isVisible ? "visible" : "hidden"}
+        >
+          And also because...if we accidentally press the clear button one more
+          time...
+        </SplitText>
+        <br />
+        <br />
+        <SplitText
+          wordPoses={wordPoses}
+          pose={this.state.isVisible ? "visible" : "hidden"}
+        >
+          WERE GOING TO SHOOT OURSELVES :D
+        </SplitText>
       </div>
     );
   }
