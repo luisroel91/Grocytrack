@@ -165,6 +165,7 @@ SWAGGER_SETTINGS = {
 
 LOGIN_URL = 'rest_framework:login'
 LOGOUT_URL = 'rest_framework:logout'
+PASSWORD_RESET_CONFIRM_URL = '/password/reset/confirm'
 
 # SimpleJWT settings
 
@@ -177,4 +178,6 @@ SIMPLE_JWT = {
 
 DJOSER = {
     'TOKEN_MODEL': None,
+    'PASSWORD_RESET_CONFIRM_URL': '#/password/reset/confirm/{uid}/{token}',
+    'ACTIVATION_URL': '#/activate/{uid}/{token}',
 }

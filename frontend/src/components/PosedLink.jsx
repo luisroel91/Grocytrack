@@ -1,7 +1,19 @@
 import React from "react";
 import posed from "react-pose";
+import SplitText from "react-pose-text";
 
 const LinkPose = posed.a({
+  visible: {
+    opacity: 1,
+    transition: { duration: 900 }
+  },
+  hidden: {
+    opacity: 0,
+    transition: { duration: 900 }
+  }
+});
+
+const wordPoses = {
   visible: {
     opacity: 1,
     transition: {
@@ -16,7 +28,7 @@ const LinkPose = posed.a({
       ease: "easeOut"
     }
   }
-});
+};
 
 class PosedLink extends React.Component {
   state = {
@@ -35,7 +47,12 @@ class PosedLink extends React.Component {
         href={this.props.href}
         pose={this.state.isVisible ? "visible" : "hidden"}
       >
-        {this.props.children}
+        <SplitText
+          wordPoses={wordPoses}
+          pose={this.state.isVisible ? "visible" : "hidden"}
+        >
+          {this.props.currentText}
+        </SplitText>
       </LinkPose>
     );
   }
