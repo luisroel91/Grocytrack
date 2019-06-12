@@ -38,13 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework.authtoken',
     # Generate schema as Swagger
     'rest_framework_swagger',
     # Integrate Django auth
     'djoser',
-    'rest_framework_simplejwt',
-    # JWT blacklist app
-    'rest_framework_simplejwt.token_blacklist',
     'django_extensions',
     'Users',
     'Items',
@@ -145,9 +143,15 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+        # For Swagger UI
         'rest_framework.authentication.SessionAuthentication',
-    )
+    ),
+    'DEFAULT_PARSER_CLASSES': (
+        'rest_framework.parsers.FormParser',
+        'rest_framework.parsers.MultiPartParser',
+        'rest_framework.parsers.JSONParser',
+    ),
 }
 
 # Swagger settings
@@ -167,17 +171,8 @@ LOGIN_URL = 'rest_framework:login'
 LOGOUT_URL = 'rest_framework:logout'
 PASSWORD_RESET_CONFIRM_URL = '/password/reset/confirm'
 
-# SimpleJWT settings
-
-SIMPLE_JWT = {
-    'ALGORITHM': 'HS512',
-    'AUTH_HEADER_TYPES': ('JWT', 'Bearer'),
-}
-
 # Djoser settings
-
 DJOSER = {
-    'TOKEN_MODEL': None,
     'PASSWORD_RESET_CONFIRM_URL': '#/password/reset/confirm/{uid}/{token}',
     'ACTIVATION_URL': '#/activate/{uid}/{token}',
 }

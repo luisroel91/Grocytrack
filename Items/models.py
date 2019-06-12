@@ -21,6 +21,7 @@ class GroceryItem(models.Model):
         unique=True,
         editable=False,
         validators=[MinLengthValidator(12)],
+        blank=True,
     )
 
     # Set string representation

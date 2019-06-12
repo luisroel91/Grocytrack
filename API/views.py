@@ -15,6 +15,26 @@ from .serializers import GroceryItemSerializer, GroceryItemListSerializer
 
 
 class GroceryItemViewSet(ModelViewSet):
+    """
+    retrieve:
+    Return an item using its ID
+
+    list:
+    Return all items
+
+    create:
+    Create an item
+
+    update:
+    Replace an item using its ID
+
+    partial_update:
+    Update an item using its ID
+
+    delete:
+    Delete an item if you are its owner
+    """
+
     queryset = GroceryItem.objects.all()
     serializer_class = GroceryItemSerializer
 
@@ -23,13 +43,19 @@ class GroceryItemViewSet(ModelViewSet):
 
 class GroceryItemListViewSet(ModelViewSet):
     """
-    get:
-    Return list using its ID
+    retrieve:
+    Return a list using its ID
 
-    put:
+    list:
+    Return all lists
+
+    create:
     Create a list
 
-    patch:
+    update:
+    Replace a list using its ID
+
+    partial_update:
     Update a list using its ID
 
     delete:
