@@ -5,10 +5,20 @@ import IntroParagraph from "../components/Intro";
 import SignUpForm from "../components/SignUpForm";
 import PosedLink from "../components/PosedLink.jsx";
 
+const theme = {
+  global: {
+    font: {
+      family: "Roboto",
+      size: "14px",
+      height: "20px"
+    }
+  }
+};
+
 class LandingPage extends React.Component {
   render() {
     return (
-      <React.Fragment>
+      <div>
         <div>
           <HeaderLogo />
         </div>
@@ -18,7 +28,7 @@ class LandingPage extends React.Component {
         </div>
         <br />
         <PosedLink href={"/login"} currentText={"Already signed up?"} />
-      </React.Fragment>
+      </div>
     );
   }
 }

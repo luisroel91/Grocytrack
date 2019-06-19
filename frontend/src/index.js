@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import posed from "react-pose";
 
 import { Provider } from "react-redux";
 
@@ -10,40 +9,25 @@ import { ConnectedRouter } from "connected-react-router";
 import configureStore, { history } from "./store/index";
 
 import LandingPage from "./containers/LandingPage";
-import LoginPage from "./containers/LoginPage.jsx";
+import LoginPage from "./containers/LoginPage";
+import OnboardingPage from "./containers/OnboardingPage";
+import OptionsPage from "./containers/OptionsPage";
+
+import "semantic-ui-less/semantic.less";
 
 import * as serviceWorker from "./serviceWorker";
 
-import "./index.scss";
-
 const store = configureStore();
-
-const LoadAnimationPose = posed.div({
-  visible: {
-    opacity: 1,
-    transition: {
-      duration: 900,
-      ease: "easeIn"
-    }
-  },
-  hidden: {
-    opacity: 0,
-    transition: {
-      duration: 900,
-      ease: "easeOut"
-    }
-  }
-});
 
 ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
-      <LoadAnimationPose>
-        <Switch>
-          <Route exact path="/" component={LandingPage} />
-          <Route path="/login" component={LoginPage} />
-        </Switch>
-      </LoadAnimationPose>
+      <Switch>
+        <Route exact path="/" component={LandingPage} />
+        <Route path="/login" component={LoginPage} />
+        <Route path="/welcome" component={OnboardingPage} />
+        <Route path="/options" component={OptionsPage} />
+      </Switch>
     </ConnectedRouter>
   </Provider>,
   document.getElementById("root")

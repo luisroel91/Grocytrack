@@ -70,23 +70,6 @@ class IntroParagraph extends React.Component {
         >
           Cool! Us too! So we made this...For you!
         </SplitText>
-        <br />
-        <br />
-        <SplitText
-          wordPoses={wordPoses}
-          pose={this.state.isVisible ? "visible" : "hidden"}
-        >
-          And also because...if we accidentally press the clear button one more
-          time...
-        </SplitText>
-        <br />
-        <br />
-        <SplitText
-          wordPoses={wordPoses}
-          pose={this.state.isVisible ? "visible" : "hidden"}
-        >
-          WERE GOING TO SHOOT OURSELVES :D
-        </SplitText>
       </div>
     );
   }

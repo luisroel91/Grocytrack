@@ -34,7 +34,7 @@ class LoginPage extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
+      <div>
         <div>
           <HeaderLogo />
         </div>
@@ -47,7 +47,7 @@ class LoginPage extends React.Component {
           </SplitText>
           <LoginForm />
         </div>
-      </React.Fragment>
+      </div>
     );
   }
 }
