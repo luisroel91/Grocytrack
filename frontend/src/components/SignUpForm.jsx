@@ -1,5 +1,6 @@
 import React from "react";
 import posed from "react-pose";
+import { Button, Checkbox, Form } from "semantic-ui-react";
 
 const SignUpPose = posed.div({
   visible: {
@@ -38,27 +39,44 @@ class SignUpForm extends React.Component {
     return (
       <SignUpPose pose={this.state.isVisible ? "visible" : "hidden"}>
         <br />
-        <form id="signup_form" onSubmit={"dispatch action here"}>
-          <input
-            type="text"
-            maxLength="20"
-            placeholder="Username"
-            name="username"
+        <Form widths={"equal"}>
+          <Form.Field required>
+            <label>Username</label>
+            <input
+              name="username"
+              required={true}
+              placeholder={"Enter Username"}
+            />
+          </Form.Field>
+          <Form.Field required>
+            <label>Email</label>
+            <input name="email" type={"email"} placeholder={"Enter Email"} />
+          </Form.Field>
+          <Form.Field required>
+            <label>Sales Tax Rate</label>
+            <input
+              name={"sales_tax_rate"}
+              type={"number"}
+              step={"0.01"}
+              min={0}
+              placeholder={"Enter Sales Tax Rate"}
+            />
+          </Form.Field>
+          <Form.Field required>
+            <label>Password</label>
+            <input
+              type={"password"}
+              placeholder={"Enter Password"}
+              name={"password"}
+            />
+          </Form.Field>
+          <Form.Field
+            required
+            control={Checkbox}
+            label={"Agree to terms and conditions?"}
           />
-          <br />
-          <input type="email" name="email" placeholder="Email" />
-          <br />
-          <input type="" name="sales_tax_rate" placeholder="Sales Tax Rate" />
-          <br />
-          <input type="text" name="password" placeholder="Password" />
-          <br />
-          <p>Agree to privacy statement?</p>
-          <input type="checkbox" />
-        </form>
-        <br />
-        <button type="submit" form="signup_form">
-          Register!
-        </button>
+          <Button type={"submit"}>Submit!</Button>
+        </Form>
       </SignUpPose>
     );
   }

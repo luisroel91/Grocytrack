@@ -1,5 +1,6 @@
 import React from "react";
 import posed from "react-pose";
+import { Grid } from "semantic-ui-react";
 
 import logo from "../logo.svg";
 
@@ -33,14 +34,11 @@ class HeaderLogo extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
-        <LogoSvg
-          className={"LogoSVG"}
-          pose={this.state.isVisible ? "visible" : "hidden"}
-          src={logo}
-        />
-        {this.props.children}
-      </React.Fragment>
+      <LogoSvg
+        className={"ui image"}
+        pose={this.state.isVisible ? "visible" : "hidden"}
+        src={logo}
+      />
     );
   }
 }

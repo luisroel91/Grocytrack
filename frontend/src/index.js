@@ -13,7 +13,7 @@ import LoginPage from "./containers/LoginPage";
 import OnboardingPage from "./containers/OnboardingPage";
 import OptionsPage from "./containers/OptionsPage";
 
-import "semantic-ui-less/semantic.less";
+import "semantic-ui-css/semantic.min.css";
 
 import * as serviceWorker from "./serviceWorker";
 
