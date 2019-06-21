@@ -1,6 +1,6 @@
 import React from "react";
 import SplitText from "react-pose-text";
-import { Container, Message, Icon, Divider, Segment } from "semantic-ui-react";
+import { Container, Message, Icon, Segment } from "semantic-ui-react";
 
 const wordPoses = {
   visible: {

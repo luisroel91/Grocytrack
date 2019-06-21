@@ -1,6 +1,6 @@
 import React from "react";
 import posed from "react-pose";
-import { Button, Form } from "semantic-ui-react";
+import { Button, Checkbox, Form } from "semantic-ui-react";
 
 const LoginPose = posed.div({
   visible: {
@@ -23,7 +23,8 @@ class LoginForm extends React.Component {
   state = {
     isVisible: false,
     username: "",
-    password: ""
+    password: "",
+    remember_username: false
   };
 
   componentDidMount() {
@@ -36,20 +37,25 @@ class LoginForm extends React.Component {
     return (
       <LoginPose pose={this.state.isVisible ? "visible" : "hidden"}>
         <br />
-        <form id="login_form" onSubmit={"dispatch action here"}>
-          <input
-            type="text"
-            maxLength="20"
-            placeholder="Username"
-            name="username"
-          />
-          <br />
-          <input type="text" name="password" placeholder="Password" />
-        </form>
-        <br />
-        <button type="submit" form="login _form">
-          Register!
-        </button>
+        <Form widths={"equal"}>
+          <Form.Field required>
+            <label>Username</label>
+            <input
+              name="username"
+              required={true}
+              placeholder={"Enter Username"}
+            />
+          </Form.Field>
+          <Form.Field required>
+            <label>Password</label>
+            <input
+              type={"password"}
+              placeholder={"Enter Password"}
+              name={"password"}
+            />
+          </Form.Field>
+          <Form.Field control={Checkbox} label={"Remember Username?"} />
+        </Form>
       </LoginPose>
     );
   }

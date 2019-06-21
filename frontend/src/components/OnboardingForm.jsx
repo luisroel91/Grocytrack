@@ -1,6 +1,7 @@
 import React from "react";
 import posed from "react-pose";
-import { Grid } from "semantic-ui-react";
+import { Button, Checkbox, Form } from "semantic-ui-react";
+import Container from "semantic-ui-react/dist/commonjs/elements/Container";
 
 const OnboardingPose = posed.div({
   visible: {
@@ -33,16 +34,15 @@ class OnBoardingForm extends React.Component {
   render() {
     return (
       <OnboardingPose pose={this.state.isVisible ? "visible" : "hidden"}>
-        <form id="oboarding_form" onSubmit={"dispatch action here"}>
-          <input type="checkbox" id="defaultflow" name="defaultflow" />
-          <label for="defaultflow">Always make my next choice</label>
-        </form>
-        <br />
-        <div>
-          <button>Go to my lists</button>
+        <Form>
+          <Form.Field control={Checkbox} label={"Always pick my next choice"} />
           <br />
-          <button>Make a new list</button>
-        </div>
+          <Button.Group size={"large"}>
+            <Button type={"submit"}>Start a New List</Button>
+            <Button.Or />
+            <Button type={"submit"}>View My Lists</Button>
+          </Button.Group>
+        </Form>
       </OnboardingPose>
     );
   }

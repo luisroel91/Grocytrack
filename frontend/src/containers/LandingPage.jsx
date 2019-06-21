@@ -13,7 +13,7 @@ class LandingPage extends React.Component {
         stretched={true}
         container={true}
         columns={1}
-        align={"center"}
+        verticalAlign={"middle"}
         textAlign={"center"}
       >
         <Grid.Row>
