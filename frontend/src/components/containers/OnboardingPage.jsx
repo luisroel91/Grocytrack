@@ -3,9 +3,9 @@ import { Container, Grid, Header, Icon } from "semantic-ui-react";
 
 import SplitText from "react-pose-text";
 
-import HeaderLogo from "../components/HeaderLogo";
-import OnboardingForm from "../components/OnboardingForm";
-import OnboardingIntro from "../components/OnboardingIntro";
+import HeaderLogo from "../HeaderLogo";
+import OnboardingForm from "../forms/OnboardingForm";
+import OnboardingIntro from "../intros/OnboardingIntro";
 
 const wordPoses = {
   visible: {

@@ -1,16 +1,10 @@
 import React from "react";
-import SplitText from "react-pose-text";
-import {
-  Container,
-  Grid,
-  Header,
-  Icon,
-  Segment,
-  Button
-} from "semantic-ui-react";
+import { Container, Grid, Header, Icon, Segment } from "semantic-ui-react";
 
-import HeaderLogo from "../components/HeaderLogo.jsx";
-import LoginForm from "../components/LoginForm.jsx";
+import SplitText from "react-pose-text";
+
+import HeaderLogo from "../HeaderLogo";
+import OptionsForm from "../forms/OptionsForm";
 
 const wordPoses = {
   visible: {
@@ -29,7 +23,7 @@ const wordPoses = {
   }
 };
 
-class LoginPage extends React.Component {
+class OptionsPage extends React.Component {
   state = {
     isVisible: false
   };
@@ -52,30 +46,19 @@ class LoginPage extends React.Component {
         <Grid.Row>
           <Grid.Column>
             <HeaderLogo />
-            <Header as={"h2"} icon textAlign={"center"}>
-              <Icon name={"sign in"} />
+            <Header as={"h1"} icon textAlign={"center"}>
               <SplitText
                 wordPoses={wordPoses}
                 pose={this.state.isVisible ? "visible" : "hidden"}
               >
-                Howdy Stranger
+                You've Got Options
               </SplitText>
-              <Header.Subheader>
-                <SplitText
-                  wordPoses={wordPoses}
-                  pose={this.state.isVisible ? "visible" : "hidden"}
-                >
-                  Please Login!
-                </SplitText>
-              </Header.Subheader>
+              <br />
+              <br />
+              <Icon loading name={"setting"} />
             </Header>
-            <Container align={"center"}>
-              <Segment style={{ maxWidth: 500 }}>
-                <LoginForm />
-              </Segment>
-              <Button size="big" type={"submit"}>
-                Login!
-              </Button>
+            <Container fluid text>
+              <OptionsForm />
             </Container>
           </Grid.Column>
         </Grid.Row>
@@ -84,4 +67,4 @@ class LoginPage extends React.Component {
   }
 }
 
-export default LoginPage;
+export default OptionsPage;

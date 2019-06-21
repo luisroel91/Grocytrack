@@ -1,10 +1,10 @@
 import React from "react";
 import { Container, Grid } from "semantic-ui-react";
 
-import HeaderLogo from "../components/HeaderLogo.jsx";
-import IntroParagraph from "../components/Intro";
-import SignUpForm from "../components/SignUpForm";
-import PosedLink from "../components/PosedLink.jsx";
+import HeaderLogo from "../HeaderLogo.jsx";
+import IntroParagraph from "../intros/Intro";
+import SignUpForm from "../forms/SignUpForm";
+import PosedLink from "../utils/PosedLink.jsx";
 
 class LandingPage extends React.Component {
   render() {

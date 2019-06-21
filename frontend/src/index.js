@@ -8,10 +8,11 @@ import { ConnectedRouter } from "connected-react-router";
 
 import configureStore, { history } from "./store/index";
 
-import LandingPage from "./containers/LandingPage";
-import LoginPage from "./containers/LoginPage";
-import OnboardingPage from "./containers/OnboardingPage";
-import OptionsPage from "./containers/OptionsPage";
+import LandingPage from "./components/containers/LandingPage";
+import LoginPage from "./components/containers/LoginPage";
+import OnboardingPage from "./components/containers/OnboardingPage";
+import OptionsPage from "./components/containers/OptionsPage";
+import App from "./components/containers/App";
 
 import "semantic-ui-css/semantic.min.css";
 
@@ -27,6 +28,7 @@ ReactDOM.render(
         <Route path="/login" component={LoginPage} />
         <Route path="/welcome" component={OnboardingPage} />
         <Route path="/options" component={OptionsPage} />
+        <Route path="/app" component={App} />
       </Switch>
     </ConnectedRouter>
   </Provider>,
