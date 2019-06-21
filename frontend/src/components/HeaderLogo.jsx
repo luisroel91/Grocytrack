@@ -1,6 +1,5 @@
 import React from "react";
 import posed from "react-pose";
-import { Grid } from "semantic-ui-react";
 
 import logo from "../logo.svg";
 

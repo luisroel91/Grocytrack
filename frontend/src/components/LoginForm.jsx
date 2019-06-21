@@ -1,6 +1,6 @@
 import React from "react";
 import posed from "react-pose";
-import { Button, Checkbox, Form } from "semantic-ui-react";
+import { Checkbox, Form } from "semantic-ui-react";
 
 const LoginPose = posed.div({
   visible: {

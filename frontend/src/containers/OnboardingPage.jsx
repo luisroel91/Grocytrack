@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Grid, Header, Icon, Segment } from "semantic-ui-react";
+import { Container, Grid, Header, Icon } from "semantic-ui-react";
 
 import SplitText from "react-pose-text";
 

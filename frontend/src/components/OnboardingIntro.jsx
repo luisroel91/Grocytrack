@@ -1,7 +1,7 @@
 import React from "react";
 import SplitText from "react-pose-text";
 
-import { Container, Message, Icon, Segment } from "semantic-ui-react";
+import { Container, Message } from "semantic-ui-react";
 
 const wordPoses = {
   visible: {
@@ -34,22 +34,24 @@ class OnboardingIntro extends React.Component {
   render() {
     return (
       <Container textAlign={"center"}>
-        <Container text>
-          <SplitText
-            wordPoses={wordPoses}
-            pose={this.state.isVisible ? "visible" : "hidden"}
-          >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut
-            blandit justo. Proin ut vestibulum eros. Aliquam erat volutpat.
-            Quisque semper, eros sed scelerisque pellentesque, tellus risus
-            volutpat odio, quis feugiat odio nisi nec felis. Donec facilisis
-            velit at porttitor cursus. Nam accumsan feugiat ornare. Aenean
-            mattis varius tellus, quis vehicula nisi. Ut sed purus nulla. Duis
-            commodo mauris sit amet sem vehicula venenatis. Pellentesque et
-            velit ac justo dignissim scelerisque. In dictum elit magna, quis
-            molestie elit tincidunt at. Morbi eu tincidunt ipsum. Phasellus
-            bibendum sapien eget rutrum commodo.
-          </SplitText>
+        <Container>
+          <Message compact size={"medium"} style={{ maxWidth: 500 }}>
+            <SplitText
+              wordPoses={wordPoses}
+              pose={this.state.isVisible ? "visible" : "hidden"}
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut
+              blandit justo. Proin ut vestibulum eros. Aliquam erat volutpat.
+              Quisque semper, eros sed scelerisque pellentesque, tellus risus
+              volutpat odio, quis feugiat odio nisi nec felis. Donec facilisis
+              velit at porttitor cursus. Nam accumsan feugiat ornare. Aenean
+              mattis varius tellus, quis vehicula nisi. Ut sed purus nulla. Duis
+              commodo mauris sit amet sem vehicula venenatis. Pellentesque et
+              velit ac justo dignissim scelerisque. In dictum elit magna, quis
+              molestie elit tincidunt at. Morbi eu tincidunt ipsum. Phasellus
+              bibendum sapien eget rutrum commodo.
+            </SplitText>
+          </Message>
         </Container>
         <br />
         <Container as={"h4"}>
