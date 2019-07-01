@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 from django.core.validators import MinLengthValidator
 
 
@@ -22,6 +23,13 @@ class GroceryItem(models.Model):
         editable=False,
         validators=[MinLengthValidator(12)],
         blank=True,
+    )
+
+    created_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        editable=False,
+        on_delete=models.CASCADE,
+        related_name="user_items"
     )
 
     # Set string representation

@@ -31,3 +31,10 @@ class GroceryItemList(TimeStampedModel):
     total_items = models.IntegerField(
         verbose_name='Total Items',
     )
+
+    created_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        editable=False,
+        on_delete=models.CASCADE,
+        related_name="user_lists"
+    )
