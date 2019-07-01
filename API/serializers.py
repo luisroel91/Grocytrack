@@ -6,17 +6,6 @@ from Users.models import ApplicationUser
 from Items.models import GroceryItem
 from Lists.models import GroceryItemList
 
-
-# Serializer for User objects
-
-class ApplicationUserSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = ApplicationUser
-        fields = ('username', 'email', 'sales_tax_rate')
-
-    lookup_field = "id"
-
 # Serializer for GroceryItems
 
 
@@ -31,7 +20,7 @@ class GroceryItemSerializer(serializers.ModelSerializer):
 
 # Serializer for GroceryItemLists
 
-class GroceryItemListSerializer(serializers.ModelSerializer):
+class GroceryItemListSerializer (serializers.ModelSerializer):
     class Meta:
         model = GroceryItemList
         fields = '__all__'
@@ -39,3 +28,13 @@ class GroceryItemListSerializer(serializers.ModelSerializer):
     lookup_field = 'id'
 
 
+# Serializer for User objects
+
+class ApplicationUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ApplicationUser
+        fields = ('username', 'email', 'sales_tax_rate', 'user_lists')
+
+    lookup_field = "id"
+
+    user_lists = GroceryItemListSerializer(many=True, read_only=True)
