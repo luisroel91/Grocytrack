@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'fa^#q8qj^h&25l2)dwf^8)^7hhv&z%40bls-senxif_iqzssul'
+SECRET_KEY = os.environ.get('SECRET_KEY', 'fa^#q8qj^h&25l2)dwf^8)^7hhv&z%40bls-senxif_iqzssul')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -105,6 +106,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'OPTIONS': {
+            'min_length': 9,
+        }
     },
     {
         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
@@ -114,6 +118,13 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Password Hashers
+#
+# We want to user Argon2 for best sec
+
+PASSWORD_HASHERS = [
+    'django.contrib.auth.hashers.Argon2PasswordHasher',
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
@@ -188,3 +199,6 @@ CORS_ORIGIN_WHITELIST = (
 
 # To test emails
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# For Heroku to handle our env
+django_heroku.settings(locals())

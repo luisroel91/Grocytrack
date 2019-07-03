@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from django.utils import timezone
+from django.core.validators import DecimalValidator, validate_email
 
 # Import our user object manager
 from .managers import CustomUserManager
@@ -31,6 +32,7 @@ class ApplicationUser(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(
         verbose_name='Email',
         unique=True,
+        validators=[validate_email]
     )
 
     # Set date_joined to current time
@@ -41,9 +43,10 @@ class ApplicationUser(AbstractBaseUser, PermissionsMixin):
     # Set sales tax rate, this will be editable
     sales_tax_rate = models.DecimalField(
         verbose_name='Sales Tax',
+        max_digits=3,
         decimal_places=2,
-        max_digits=10,
         editable=True,
+        validators=[DecimalValidator(max_digits=3, decimal_places=2)]
     )
 
     # Set username/email fields + required fields

@@ -6,7 +6,7 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-django = "*"
+django = {extras = ["argon2"],version = "*"}
 djangorestframework = "*"
 django-rest-swagger = "*"
 django-cors-headers = "*"
@@ -16,6 +16,9 @@ djangorestframework-simplejwt = "*"
 django-extensions = "*"
 djoser = "*"
 social-auth-app-django = "*"
+gunicorn = "*"
+django-heroku = "*"
+psycopg2 = "*"
 
 [requires]
 python_version = "3.7"
