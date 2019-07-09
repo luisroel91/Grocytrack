@@ -200,7 +200,6 @@ CORS_ORIGIN_WHITELIST = (
     'https://www.grocytrack.com'
 )
 
-SECURE_SSL_REDIRECT = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # To test emails
