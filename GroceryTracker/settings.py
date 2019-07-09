@@ -21,10 +21,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', 'fa^#q8qj^h&25l2)dwf^8)^7hhv&z%40bls-senxif_iqzssul')
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', True)
+DEBUG = os.environ.get('DEBUG')
 
 ALLOWED_HOSTS = ["*"]
 
@@ -193,8 +193,9 @@ DJOSER = {
 CORS_ORIGIN_ALLOW_ALL = False
 
 CORS_ORIGIN_WHITELIST = (
-    'http://localhost:8000',
-    'http://localhost:3000',
+    'https://api.grocytrack.com',
+    'https://grocytrack.com',
+    'https://www.grocytrack.com'
 )
 
 # To test emails
