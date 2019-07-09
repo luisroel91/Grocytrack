@@ -29,6 +29,8 @@ Routing is controlled at the app level with the exception
 of the DRF api-auth routes needed for the browsable API
 """
 
+from Users.views import FrontendAppView
+
 urlpatterns = [
     # Built in admin
     path('admin/', admin.site.urls),
@@ -37,14 +39,17 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
 
     # Swagger view
-    path('', schema_view),
+    path('/api', schema_view),
 
     # API endpoints
-    path('', include('API.urls')),
+    path('/api', include('API.urls')),
 
     # Auth endpoints
     path('', include('djoser.urls')),
     path('', include('djoser.urls.authtoken')),
+
+    # Frontend
+    path("", FrontendAppView.as_view()),
 
 
 ]
