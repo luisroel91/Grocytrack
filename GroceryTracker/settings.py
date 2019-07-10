@@ -202,13 +202,15 @@ DJOSER = {
 CORS_ORIGIN_ALLOW_ALL = False
 
 CORS_ORIGIN_WHITELIST = (
-    'https://api.grocytrack.com',
-    'http://api.grocytrack.com',
     'https://grocytrack.com',
     'https://www.grocytrack.com'
 )
 
+
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = True
+SECURE_HSTS_SECONDS = 3600
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
 # To test emails
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
