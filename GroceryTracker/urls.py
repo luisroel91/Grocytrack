@@ -14,8 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 
+from Users.views import FrontendAppView
 
 # Import renderer to render schema as Swagger
 from rest_framework_swagger.views import get_swagger_view
@@ -29,7 +30,7 @@ Routing is controlled at the app level with the exception
 of the DRF api-auth routes needed for the browsable API
 """
 
-from Users.views import FrontendAppView
+
 
 urlpatterns = [
     # Built in admin
@@ -49,7 +50,7 @@ urlpatterns = [
     path('/auth', include('djoser.urls.authtoken')),
 
     # Frontend
-    path("/", FrontendAppView.as_view()),
+    re_path(r'^', FrontendAppView.as_view()),
 
 
 ]
