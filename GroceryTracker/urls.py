@@ -16,8 +16,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include, re_path
 
-from Users.views import FrontendAppView
-
 # Import renderer to render schema as Swagger
 from rest_framework_swagger.views import get_swagger_view
 
@@ -40,17 +38,13 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
 
     # Swagger view
-    path('schema/', schema_view),
+    path('', schema_view),
 
     # API endpoints
-    path('api/', include('API.urls')),
+    path('', include('API.urls')),
 
     # Auth endpoints
     path('auth/', include('djoser.urls')),
     path('auth/', include('djoser.urls.authtoken')),
-
-    # Frontend
-    re_path(r'^', FrontendAppView.as_view()),
-
 
 ]
