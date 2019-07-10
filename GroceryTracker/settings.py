@@ -70,7 +70,7 @@ ROOT_URLCONF = 'GroceryTracker.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
+        'DIRS': [os.path.join(BASE_DIR, 'GroceryTracker/templates')]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -193,6 +193,11 @@ DJOSER = {
     'ACTIVATION_URL': 'https://www.grocytrack.com/activate/{uid}/{token}',
     'SEND_ACTIVATION_EMAIL': True,
     'SEND_CONFIRMATION_EMAIL': True,
+    'EMAIL': {
+        'password_reset': 'email.PasswordResetEmail',
+        'confirmation': 'email.ConfirmationEmail',
+        'activation': 'email.ActivationEmail',
+    }
 }
 
 CORS_ORIGIN_ALLOW_ALL = False
@@ -211,6 +216,8 @@ SECURE_SSL_REDIRECT = True
 EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
 SENDGRID_API_KEY = os.environ.get("SENDGRID_API_KEY")
 SENDGRID_SANDBOX_MODE_IN_DEBUG = False
+DOMAIN = 'grocytrack.com'
+SITE_NAME = 'Grocytrack'
 
 # For Heroku to handle our env
 django_heroku.settings(locals())

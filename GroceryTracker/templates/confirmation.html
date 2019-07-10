@@ -1,0 +1,21 @@
+{% load i18n %}
+
+{% block subject %}
+{% blocktrans %}Account successfully created and activated, ready to roll!{% endblocktrans %}
+{% endblock %}
+
+{% block text_body %}
+{% trans "Your account has been created and is ready to use!" %}
+
+{% trans "Thanks for being part of our Grocyfam!" %}
+
+{% blocktrans %}The Grocytrack team{% endblocktrans %}
+{% endblock text_body %}
+
+{% block html_body %}
+<p>{% trans "Your account has been created and is ready to use!" %}</p>
+
+<p>{% trans "Thanks for being part of our Grocyfam!" %}</p>
+
+<p>{% blocktrans %}The Grocytrack team{% endblocktrans %}</p>
+{% endblock html_body %}
