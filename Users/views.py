@@ -1,10 +1,11 @@
 import os
 import logging
 from django.http import HttpResponse
-from django.vies.generic import View
+from django.views.generic import View
 from django.conf import settings
 
 # Create your views here.
+
 
 class FrontendAppView(View):
 
