@@ -44,7 +44,7 @@ urlpatterns = [
     path('', include('API.urls')),
 
     # Auth endpoints
-    path('auth/', include('djoser.urls')),
-    path('auth/', include('djoser.urls.authtoken')),
+    path('', include('djoser.urls')),
+    path('', include('djoser.urls.authtoken')),
 
 ]
