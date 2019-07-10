@@ -207,6 +207,7 @@ SECURE_SSL_REDIRECT = True
 # To test emails
 EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
 SENDGRID_API_KEY = os.environ.get("SENDGRID_API_KEY")
+SENDGRID_SANDBOX_MODE_IN_DEBUG = False
 
 # For Heroku to handle our env
 django_heroku.settings(locals())
