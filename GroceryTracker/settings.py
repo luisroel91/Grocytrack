@@ -213,9 +213,12 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SECURE_SSL_REDIRECT = True
 
 # To test emails
-EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
 SENDGRID_API_KEY = os.environ.get("SENDGRID_API_KEY")
-SENDGRID_SANDBOX_MODE_IN_DEBUG = False
+EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
+DEFAULT_FROM_EMAIL = "noreply@grocytrack.com"
+SERVER_EMAIL = "noreply@grocytrack.com"
+SENDGRID_SANDBOX_MODE_IN_DEBUG = True
+
 DOMAIN = 'grocytrack.com'
 SITE_NAME = 'Grocytrack'
 
