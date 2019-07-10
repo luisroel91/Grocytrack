@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 import django_heroku
-import email
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -195,9 +194,9 @@ DJOSER = {
     'SEND_ACTIVATION_EMAIL': True,
     'SEND_CONFIRMATION_EMAIL': True,
     'EMAIL': {
-        'password_reset': 'email.PasswordResetEmail',
-        'confirmation': 'email.ConfirmationEmail',
-        'activation': 'email.ActivationEmail',
+        'password_reset': 'GroceryTracker.email.PasswordResetEmail',
+        'confirmation': 'GroceryTracker.email.ConfirmationEmail',
+        'activation': 'GroceryTracker.email.ActivationEmail',
     }
 }
 

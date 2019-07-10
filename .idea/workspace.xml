@@ -45,8 +45,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GroceryTracker/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="193" column="34" lean-forward="true" selection-start-line="193" selection-start-column="34" selection-end-line="193" selection-end-column="34" />
+            <state relative-caret-position="412">
+              <caret line="199" column="23" lean-forward="true" selection-start-line="199" selection-start-column="23" selection-end-line="199" selection-end-column="23" />
               <folding>
                 <element signature="e#315#324#0" expanded="true" />
               </folding>
@@ -302,7 +302,7 @@
       <workItem from="1562245965832" duration="216000" />
       <workItem from="1562610756652" duration="434000" />
       <workItem from="1562705296767" duration="12211000" />
-      <workItem from="1562772882021" duration="5022000" />
+      <workItem from="1562772882021" duration="5253000" />
     </task>
     <task id="LOCAL-00001" summary="Update">
       <created>1559603239252</created>
@@ -336,13 +336,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85840000" />
+    <option name="totallyTimeSpent" value="86071000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="123" y="23" width="1920" height="1057" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49933776" visible="true" weight="0.21831736" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49933776" visible="true" weight="0.21831736" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.50066227" side_tool="true" weight="0.33551198" />
       <window_info id="DB Browser" order="3" />
@@ -357,7 +356,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50167227" side_tool="true" weight="0.32854864" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49832776" visible="true" weight="0.40764332" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49832776" visible="true" weight="0.40764332" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="bottom" id="Quokka" order="13" />
       <window_info anchor="bottom" id="DB Execution Console" order="14" />
@@ -631,8 +630,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GroceryTracker/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="193" column="34" lean-forward="true" selection-start-line="193" selection-start-column="34" selection-end-line="193" selection-end-column="34" />
+        <state relative-caret-position="412">
+          <caret line="199" column="23" lean-forward="true" selection-start-line="199" selection-start-column="23" selection-end-line="199" selection-end-column="23" />
           <folding>
             <element signature="e#315#324#0" expanded="true" />
           </folding>
