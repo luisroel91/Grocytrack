@@ -45,11 +45,11 @@ urlpatterns = [
     path('/api', include('API.urls')),
 
     # Auth endpoints
-    path('', include('djoser.urls')),
-    path('', include('djoser.urls.authtoken')),
+    path('/auth', include('djoser.urls')),
+    path('/auth', include('djoser.urls.authtoken')),
 
     # Frontend
-    path("", FrontendAppView.as_view()),
+    path("/", FrontendAppView.as_view()),
 
 
 ]
