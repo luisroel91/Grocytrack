@@ -189,8 +189,8 @@ PASSWORD_RESET_CONFIRM_URL = '/password/reset/confirm'
 
 # Djoser settings
 DJOSER = {
-    'PASSWORD_RESET_CONFIRM_URL': 'https://www.grocytrack.com/password-reset/confirm/{uid}/{token}',
-    'ACTIVATION_URL': 'https://www.grocytrack.com/activate/{uid}/{token}',
+    'PASSWORD_RESET_CONFIRM_URL': '/password-reset/confirm/{uid}/{token}',
+    'ACTIVATION_URL': '/activate/{uid}/{token}',
     'SEND_ACTIVATION_EMAIL': True,
     'SEND_CONFIRMATION_EMAIL': True,
     'EMAIL': {

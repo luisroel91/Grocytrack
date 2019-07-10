@@ -1,14 +1,14 @@
 {% load i18n %}
 
 {% block subject %}
-{% blocktrans %}Thanks for signing up {{ user.get_username }}!{% endblocktrans %}
+{% blocktrans %}Thanks for signing up with us!{% endblocktrans %}
 {% endblock subject %}
 
 {% block text_body %}
 {% blocktrans %}We're really happy you've decided to let us help you on the endless quest for proper food budgeting :){% endblocktrans %}
 
 {% trans "One more thing! We'll need you to click the link below to activate your account: " %}
-{{ protocol }}://{{ domain }}/{{ url|safe }}
+https://www.grocytrack.com/{{ url|safe }}
 
 {% blocktrans %} "Thanks again {{ user.get_username }}! You rock!{% endblocktrans %}
 
@@ -19,7 +19,7 @@
 <p>{% blocktrans %}We're really happy you've decided to let us help you on the endless quest for proper food budgeting :){% endblocktrans %}</p>
 
 <p>{% trans "One more thing! We'll need you to click the link below to activate your account: " %}</p>
-<p><a href="{{ protocol }}://{{ domain }}/{{ url|safe }}">{{ protocol }}://{{ domain }}/{{ url|safe }}</a></p>
+<p><a href="https://www.grocytrack.com/{{ url|safe }}">https://www.grocytrack.com/{{ url|safe }}</a></p>
 
 <p>{% blocktrans %} "Thanks again {{ user.get_username }}! You rock!{% endblocktrans %}</p>
 
