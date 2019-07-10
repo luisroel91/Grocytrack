@@ -197,7 +197,8 @@ CORS_ORIGIN_ALLOW_ALL = False
 
 CORS_ORIGIN_WHITELIST = (
     'https://grocytrack.com',
-    'https://www.grocytrack.com'
+    'https://www.grocytrack.com',
+    'https://api.grocytrack.com',
 )
 
 
