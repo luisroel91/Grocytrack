@@ -7,7 +7,7 @@ from djoser.conf import settings
 
 
 class PasswordResetEmail(BaseEmailMessage):
-    template_name = 'templates/password_reset.html'
+    template_name = 'password_reset.html'
 
     def get_context_data(self):
         context = super(PasswordResetEmail, self).get_context_data()
@@ -20,7 +20,7 @@ class PasswordResetEmail(BaseEmailMessage):
 
 
 class ActivationEmail(BaseEmailMessage):
-    template_name = 'templates/activation.html'
+    template_name = 'activation.html'
 
     def get_context_data(self):
         context = super(ActivationEmail, self).get_context_data()
@@ -33,4 +33,4 @@ class ActivationEmail(BaseEmailMessage):
 
 
 class ConfirmationEmail(BaseEmailMessage):
-    template_name = 'templates/confirmation.html'
+    template_name = 'confirmation.html'
