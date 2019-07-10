@@ -70,7 +70,7 @@ ROOT_URLCONF = 'GroceryTracker.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'GroceryTracker/templates')]
+        'DIRS': [os.path.join(BASE_DIR, 'GroceryTracker/../templates')]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
