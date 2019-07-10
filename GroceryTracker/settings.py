@@ -194,9 +194,9 @@ DJOSER = {
     'SEND_ACTIVATION_EMAIL': True,
     'SEND_CONFIRMATION_EMAIL': True,
     'EMAIL': {
-        'password_reset': 'email.PasswordResetEmail',
-        'confirmation': 'email.ConfirmationEmail',
-        'activation': 'email.ActivationEmail',
+        'password_reset': '.email.PasswordResetEmail',
+        'confirmation': '.email.ConfirmationEmail',
+        'activation': '.email.ActivationEmail',
     }
 }
 
