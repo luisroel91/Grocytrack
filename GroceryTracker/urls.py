@@ -40,14 +40,14 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
 
     # Swagger view
-    path('/schema', schema_view),
+    path('schema/', schema_view),
 
     # API endpoints
-    path('/api', include('API.urls')),
+    path('api/', include('API.urls')),
 
     # Auth endpoints
-    path('/auth', include('djoser.urls')),
-    path('/auth', include('djoser.urls.authtoken')),
+    path('auth/', include('djoser.urls')),
+    path('auth/', include('djoser.urls.authtoken')),
 
     # Frontend
     re_path(r'^', FrontendAppView.as_view()),
