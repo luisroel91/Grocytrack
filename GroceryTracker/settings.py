@@ -215,12 +215,9 @@ SECURE_SSL_REDIRECT = True
 # To test emails
 SENDGRID_API_KEY = os.environ.get("SENDGRID_API_KEY")
 EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
-DEFAULT_FROM_EMAIL = "noreply@grocytrack.com"
-SERVER_EMAIL = "noreply@grocytrack.com"
+DEFAULT_FROM_EMAIL = "noreply@em744.grocytrack.com"
+SERVER_EMAIL = "noreply@em744.grocytrack.com"
 SENDGRID_SANDBOX_MODE_IN_DEBUG = True
-
-DOMAIN = 'grocytrack.com'
-SITE_NAME = 'Grocytrack'
 
 # For Heroku to handle our env
 django_heroku.settings(locals())
