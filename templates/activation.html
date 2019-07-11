@@ -8,7 +8,7 @@
 {% blocktrans %}We're happy you've decided to let us help you on the endless quest for proper food budgeting :){% endblocktrans %}
 
 {% trans "One more thing! We'll need you to click the link below to activate your account: " %}
-https://www.grocytrack.com/{{ url }}
+{{ url }}
 
 {% blocktrans %}Thanks again, you rock!{% endblocktrans %}
 
@@ -19,7 +19,7 @@ https://www.grocytrack.com/{{ url }}
 <p>{% blocktrans %}We're happy you've decided to let us help you on the endless quest for proper food budgeting :){% endblocktrans %}</p>
 
 <p>{% trans "One more thing! We'll need you to click the link below to activate your account: " %}</p>
-<p><a href="https://www.grocytrack.com/{{ url }}">https://www.grocytrack.com/{{ url }}</a></p>
+<p><a href="{{ url|safe }}">{{ url|safe }}</a></p>
 
 <p>{% blocktrans %}Thanks again, you rock!{% endblocktrans %}</p>
 
