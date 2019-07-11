@@ -5,23 +5,23 @@
 {% endblock subject %}
 
 {% block text_body %}
-{% blocktrans %}We're really happy you've decided to let us help you on the endless quest for proper food budgeting :){% endblocktrans %}
+{% blocktrans %}We're happy you've decided to let us help you on the endless quest for proper food budgeting :){% endblocktrans %}
 
 {% trans "One more thing! We'll need you to click the link below to activate your account: " %}
-https://www.grocytrack.com/{{ url|safe }}
+https://www.grocytrack.com/{{ url }}
 
-{% blocktrans %} "Thanks again {{ user.get_username }}! You rock!{% endblocktrans %}
+{% blocktrans %}Thanks again, you rock!{% endblocktrans %}
 
 {% trans "The Grocytrack team" %}
 {% endblock text_body %}
 
 {% block html_body %}
-<p>{% blocktrans %}We're really happy you've decided to let us help you on the endless quest for proper food budgeting :){% endblocktrans %}</p>
+<p>{% blocktrans %}We're happy you've decided to let us help you on the endless quest for proper food budgeting :){% endblocktrans %}</p>
 
 <p>{% trans "One more thing! We'll need you to click the link below to activate your account: " %}</p>
-<p><a href="https://www.grocytrack.com/{{ url|safe }}">https://www.grocytrack.com/{{ url|safe }}</a></p>
+<p><a href="https://www.grocytrack.com/{{ url }}">https://www.grocytrack.com/{{ url }}</a></p>
 
-<p>{% blocktrans %} "Thanks again {{ user.get_username }}! You rock!{% endblocktrans %}</p>
+<p>{% blocktrans %}Thanks again, you rock!{% endblocktrans %}</p>
 
 <p>{% trans "The Grocytrack team" %}</p>
 

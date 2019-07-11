@@ -206,7 +206,7 @@ CORS_ORIGIN_WHITELIST = (
     'https://grocytrack.com',
     'https://www.grocytrack.com',
     'https://api.grocytrack.com',
-    'https://localhost:3000'
+    'https://localhost:3000',
 )
 
 
