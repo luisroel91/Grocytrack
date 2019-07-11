@@ -217,7 +217,7 @@ SENDGRID_API_KEY = os.environ.get("SENDGRID_API_KEY")
 EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
 DEFAULT_FROM_EMAIL = "Grocytrak <noreply@em744.grocytrack.com>"
 SERVER_EMAIL = "Grocytrak <noreply@em744.grocytrack.com>"
-SENDGRID_SANDBOX_MODE_IN_DEBUG = True
+SENDGRID_SANDBOX_MODE_IN_DEBUG = False
 
 # For Heroku to handle our env
 django_heroku.settings(locals())
