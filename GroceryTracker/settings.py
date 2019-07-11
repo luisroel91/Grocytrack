@@ -185,12 +185,12 @@ SWAGGER_SETTINGS = {
 
 LOGIN_URL = 'rest_framework:login'
 LOGOUT_URL = 'rest_framework:logout'
-PASSWORD_RESET_CONFIRM_URL = 'password-reset/confirm'
+PASSWORD_RESET_CONFIRM_URL = '/password/reset/confirm'
 
 # Djoser settings
 DJOSER = {
-    'PASSWORD_RESET_CONFIRM_URL': 'password-reset/confirm/{uid}/{token}',
-    'ACTIVATION_URL': 'activate/{uid}/{token}',
+    'PASSWORD_RESET_CONFIRM_URL': 'https://www.grocytrack.com/password-reset/confirm/{uid}/{token}',
+    'ACTIVATION_URL': 'https://www.grocytrack.com/activate/{uid}/{token}',
     'SEND_ACTIVATION_EMAIL': True,
     'SEND_CONFIRMATION_EMAIL': True,
     'EMAIL': {
@@ -206,7 +206,7 @@ CORS_ORIGIN_WHITELIST = (
     'https://grocytrack.com',
     'https://www.grocytrack.com',
     'https://api.grocytrack.com',
-    'https://localhost:3000',
+    'https://localhost:3000'
 )
 
 
@@ -216,8 +216,8 @@ SECURE_SSL_REDIRECT = True
 # To test emails
 SENDGRID_API_KEY = os.environ.get("SENDGRID_API_KEY")
 EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
-DEFAULT_FROM_EMAIL = "noreply@grocytrack.com"
-SERVER_EMAIL = "noreply@grocytrack.com"
+DEFAULT_FROM_EMAIL = "Grocytrak <noreply@grocytrack.com>"
+SERVER_EMAIL = "Grocytrak <noreply@grocytrack.com>"
 SENDGRID_SANDBOX_MODE_IN_DEBUG = False
 
 # For Heroku to handle our env
