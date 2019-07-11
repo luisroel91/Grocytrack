@@ -206,6 +206,7 @@ CORS_ORIGIN_WHITELIST = (
     'https://grocytrack.com',
     'https://www.grocytrack.com',
     'https://api.grocytrack.com',
+    'https://localhost:3000'
 )
 
 
@@ -215,8 +216,8 @@ SECURE_SSL_REDIRECT = True
 # To test emails
 SENDGRID_API_KEY = os.environ.get("SENDGRID_API_KEY")
 EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
-DEFAULT_FROM_EMAIL = "Grocytrak <noreply@em744.grocytrack.com>"
-SERVER_EMAIL = "Grocytrak <noreply@em744.grocytrack.com>"
+DEFAULT_FROM_EMAIL = "Grocytrak <noreply@grocytrack.com>"
+SERVER_EMAIL = "Grocytrak <noreply@grocytrack.com>"
 SENDGRID_SANDBOX_MODE_IN_DEBUG = False
 
 # For Heroku to handle our env
