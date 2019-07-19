@@ -28,6 +28,7 @@ class GroceryItemListSerializer (serializers.ModelSerializer):
     class Meta:
         model = GroceryItemList
         fields = ('items', 'sub_total', 'tax_amount', 'total_items', 'created_by')
+        depth = 2
 
     lookup_field = 'id'
 
