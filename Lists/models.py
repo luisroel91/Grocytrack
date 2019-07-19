@@ -13,7 +13,6 @@ class GroceryItemList(TimeStampedModel):
         GroceryItem,
         verbose_name='Grocery Items',
         related_name='items',
-        blank=True,
     )
 
     sub_total = models.DecimalField(

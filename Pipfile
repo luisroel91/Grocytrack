@@ -21,6 +21,7 @@ django-heroku = "*"
 psycopg2 = "*"
 whitenoise = "*"
 django-sendgrid-v5 = "*"
+drf-writable-nested = "*"
 
 [requires]
 python_version = "3.7"
