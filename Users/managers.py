@@ -1,4 +1,5 @@
 from django.contrib.auth.base_user import BaseUserManager
+from phonenumber_field.modelfields import PhoneNumberField
 
 # Need to define user manager for our custom user class, making sure
 # that the email field is required when creating a user.
@@ -8,7 +9,7 @@ from django.contrib.auth.base_user import BaseUserManager
 
 class CustomUserManager(BaseUserManager):
 
-    def create_user(self, username, email, sales_tax_rate, password, **extra_fields):
+    def create_user(self, username, email, sales_tax_rate, password, mobile, **extra_fields):
 
         # Reject is no email
         if not email:
@@ -20,6 +21,7 @@ class CustomUserManager(BaseUserManager):
             username=username,
             email=email,
             sales_tax_rate=sales_tax_rate,
+            mobile=mobile,
             ** extra_fields,
         )
 
@@ -31,7 +33,7 @@ class CustomUserManager(BaseUserManager):
 
         return user
 
-    def create_superuser(self, username, email, sales_tax_rate, password, **extra_fields):
+    def create_superuser(self, username, email, mobile, sales_tax_rate, password, **extra_fields):
 
         # Set admin permissions for superusers
         extra_fields.setdefault('is_staff', True)
@@ -45,10 +47,15 @@ class CustomUserManager(BaseUserManager):
         if extra_fields.get('is_superuser') is not True:
             raise ValueError('Superuser must have SU flag.')
 
-        return self.create_user(
-            username,
-            email,
-            sales_tax_rate,
-            password,
-            **extra_fields
+        user = self.model(
+            username=username,
+            email=email,
+            sales_tax_rate=sales_tax_rate,
+            mobile=mobile,
+            **extra_fields,
         )
+
+        user.set_password(password)
+        user.save()
+
+        return user

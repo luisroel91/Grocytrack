@@ -7,7 +7,7 @@ verify_ssl = true
 
 [packages]
 django = {extras = ["argon2"],version = "*"}
-djangorestframework = "*"
+djangorestframework = "~=3.9.4"
 django-rest-swagger = "*"
 django-cors-headers = "*"
 django-import-export = "*"
@@ -21,6 +21,11 @@ django-heroku = "*"
 psycopg2 = "*"
 whitenoise = "*"
 django-sendgrid-v5 = "*"
+drf-writable-nested = "*"
+django-phonenumber-field = "*"
+phonenumbers = "*"
+twilio = "*"
+drfpasswordless = {editable = true,git = "https://github.com/luisroel91/django-rest-framework-passwordless.git",ref = "master"}
 
 [requires]
 python_version = "3.7"

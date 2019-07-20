@@ -1,6 +1,7 @@
 from django.db import models
 from django.conf import settings
 from django_extensions.db.models import TimeStampedModel
+from django.core.validators import MinLengthValidator
 
 # Import our Item Model
 from Items.models import GroceryItem
@@ -13,7 +14,6 @@ class GroceryItemList(TimeStampedModel):
         GroceryItem,
         verbose_name='Grocery Items',
         related_name='items',
-        blank=True,
     )
 
     sub_total = models.DecimalField(
@@ -32,9 +32,20 @@ class GroceryItemList(TimeStampedModel):
         verbose_name='Total Items',
     )
 
+    store_name = models.CharField(
+        verbose_name="Item Grocery Store Name",
+        max_length=110,
+        validators=[MinLengthValidator(3)]
+    )
+
     created_by = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         editable=False,
         on_delete=models.CASCADE,
         related_name="user_lists"
+    )
+
+    public = models.BooleanField(
+        default=False,
+        editable=True,
     )

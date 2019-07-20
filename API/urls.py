@@ -10,7 +10,7 @@ from rest_framework.routers import SimpleRouter
 ApplicationRouter = SimpleRouter()
 
 ApplicationRouter.register("items", GroceryItemViewSet)
-ApplicationRouter.register("lists", GroceryItemListViewSet)
+ApplicationRouter.register("lists", GroceryItemListViewSet, basename="lists")
 
 # URL Patterns
 

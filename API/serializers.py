@@ -1,5 +1,6 @@
 from rest_framework import serializers
-
+from drf_writable_nested import WritableNestedModelSerializer
+from phonenumber_field.serializerfields import PhoneNumberField
 # Import our models
 
 from Users.models import ApplicationUser
@@ -10,64 +11,68 @@ from Lists.models import GroceryItemList
 
 
 class GroceryItemSerializer(serializers.ModelSerializer):
-    created_by = serializers.HiddenField(default=serializers.CurrentUserDefault())
+    created_by = serializers.PrimaryKeyRelatedField(read_only=True, default=serializers.CurrentUserDefault())
+    created_by_name = serializers.StringRelatedField(source='created_by', read_only=True)
+
+    id = serializers.ReadOnlyField()
+
+    # Eventually we'll add the UPC field to this
 
     class Meta:
         model = GroceryItem
-        fields = ('name', 'price', 'upc', 'created_by')
+        fields = ('name', 'price', 'store_name', 'id', 'created_by_name', 'created_by')
 
-    lookup_field = 'upc'
+    def save(self, **kwargs):
+        kwargs["created_by"] = self.fields["created_by"].get_default()
+
+        return super().save(**kwargs)
+
+    lookup_field = 'id'
 
 
 # Serializer for GroceryItemLists
 
-class GroceryItemListSerializer (serializers.ModelSerializer):
+class GroceryItemListSerializer (WritableNestedModelSerializer):
     items = GroceryItemSerializer(many=True)
-    created_by = serializers.HiddenField(default=serializers.CurrentUserDefault())
+    created_by = serializers.PrimaryKeyRelatedField(read_only=True, default=serializers.CurrentUserDefault())
+    id = serializers.ReadOnlyField()
+    created_by_name = serializers.StringRelatedField(source='created_by', read_only=True)
+    public = serializers.BooleanField(default=False)
 
     class Meta:
         model = GroceryItemList
-        fields = ('items', 'sub_total', 'tax_amount', 'total_items', 'created_by')
-        depth = 2
+        fields = (
+            'id',
+            'public',
+            'created_by_name',
+            'created_by',
+            'tax_amount',
+            'sub_total',
+            'store_name',
+            'total_items',
+            'items',
+        )
 
-    lookup_field = 'id'
+    def save(self, **kwargs):
+        kwargs["created_by"] = self.fields["created_by"].get_default()
 
-"""
-    def create(self, validated_data):
-        items_data = validated_data.pop('items')
+        return super().save(**kwargs)
 
-        instance = GroceryItemList.objects.create(**validated_data)
 
-        for item in items_data:
-            item_instance = GroceryItem.objects.create(item)
-            item_instance.save()
-            instance.items.add(item_instance)
-
-        instance.save()
-
-        return instance
-
-    def update(self, instance, validated_data):
-        items_data = validated_data.pop('items')
-
-        instance.items = validated_data.get('items')
-
-        for item in items_data:
-            if item in instance.items
-
-"""
 # Serializer for User objects
 
 class ApplicationUserSerializer(serializers.ModelSerializer):
     lookup_field = "id"
-
-    user_lists = serializers.SerializerMethodField()
+    id = serializers.ReadOnlyField()
+    mobile = PhoneNumberField()
+    sales_tax_rate = serializers.DecimalField(max_digits=3, decimal_places=2)
 
     class Meta:
         model = ApplicationUser
-        fields = ('username', 'email', 'sales_tax_rate', 'user_lists')
-
-    def get_user_lists(self, obj):
-        lists = GroceryItemList.objects.filter(created_by_id=serializers.CurrentUserDefault())
-
-        return lists
+        fields = (
+            'username',
+            'email',
+            'sales_tax_rate',
+            'id',
+            'mobile',
+        )

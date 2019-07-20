@@ -17,11 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 
 # Import renderer to render schema as Swagger
-from rest_framework_swagger.views import get_swagger_view
-
-schema_view = get_swagger_view(
-    title="Grocytrack API",
-)
+from .schema_view import schema_view
+from API.views import PublicListView, PublicListDetailView
 
 """
 Routing is controlled at the app level with the exception
@@ -46,5 +43,10 @@ urlpatterns = [
     # Auth endpoints
     path('', include('djoser.urls')),
     path('', include('djoser.urls.authtoken')),
+    path('pin_login/', include('drfpasswordless.urls')),
+
+    # Public lists
+    path('public_lists/', PublicListView.as_view()),
+    path('public_lists/<int:id>/', PublicListDetailView.as_view()),
 
 ]

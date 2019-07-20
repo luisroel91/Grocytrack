@@ -21,10 +21,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY', 'a52a(24%h_!9f2e*!s)o)xr(5x56(1nc_cfj83&_jz-p&wh4&z')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', False)
+DEBUG = os.environ.get('DEBUG', True)
 
 ALLOWED_HOSTS = ['*']
 
@@ -37,15 +37,18 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
+    'drfpasswordless',
     # Generate schema as Swagger
     'rest_framework_swagger',
     # Integrate Django auth
     'djoser',
     'django_extensions',
+    'phonenumber_field',
     'Users',
     'Items',
     'Lists',
@@ -127,6 +130,19 @@ PASSWORD_HASHERS = [
     'django.contrib.auth.hashers.Argon2PasswordHasher',
 ]
 
+# Passwordless Auth
+
+PASSWORDLESS_AUTH = {
+    'PASSWORDLESS_EMAIL_TOKEN_HTML_TEMPLATE_NAME': 'passwordless_email_token.html',
+    'PASSWORDLESS_AUTH_TYPES': ['EMAIL', 'MOBILE'],
+    'PASSWORDLESS_EMAIL_NOREPLY_ADDRESS': 'pin@grocytrack.com',
+    'PASSWORDLESS_EMAIL_SUBJECT': 'Request a PIN?',
+    'PASSWORDLESS_REGISTER_NEW_USERS': False,
+    'PASSWORDLESS_MOBILE_NOREPLY_NUMBER': '+17864813744',
+    'PASSWORDLESS_MOBILE_MESSAGE': 'Your Grocytrack PIN: %s',
+
+}
+
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
@@ -207,11 +223,12 @@ CORS_ORIGIN_WHITELIST = (
     'https://www.grocytrack.com',
     'https://api.grocytrack.com',
     'https://localhost:3000',
-)
+    'http://localhost:8000',
+    )
 
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-SECURE_SSL_REDIRECT = True
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# SECURE_SSL_REDIRECT = True
 
 # To test emails
 SENDGRID_API_KEY = os.environ.get("SENDGRID_API_KEY")
