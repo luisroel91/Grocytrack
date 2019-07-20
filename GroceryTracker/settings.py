@@ -37,15 +37,18 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
+    'drfpasswordless',
     # Generate schema as Swagger
     'rest_framework_swagger',
     # Integrate Django auth
     'djoser',
     'django_extensions',
+    'phonenumber_field',
     'Users',
     'Items',
     'Lists',
@@ -126,6 +129,19 @@ AUTH_PASSWORD_VALIDATORS = [
 PASSWORD_HASHERS = [
     'django.contrib.auth.hashers.Argon2PasswordHasher',
 ]
+
+# Passwordless Auth
+
+PASSWORDLESS_AUTH = {
+    'PASSWORDLESS_EMAIL_TOKEN_HTML_TEMPLATE_NAME': 'passwordless_email_token.html',
+    'PASSWORDLESS_AUTH_TYPES': ['EMAIL', 'MOBILE'],
+    'PASSWORDLESS_EMAIL_NOREPLY_ADDRESS': 'pin@grocytrack.com',
+    'PASSWORDLESS_EMAIL_SUBJECT': 'Request a PIN?',
+    'PASSWORDLESS_REGISTER_NEW_USERS': False,
+    'PASSWORDLESS_MOBILE_NOREPLY_NUMBER': '+17864813744',
+    'PASSWORDLESS_MOBILE_MESSAGE': 'Your Grocytrack PIN: %s',
+
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
@@ -208,7 +224,7 @@ CORS_ORIGIN_WHITELIST = (
     'https://api.grocytrack.com',
     'https://localhost:3000',
     'http://localhost:8000',
-)
+    )
 
 
 # SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

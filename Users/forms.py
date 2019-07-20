@@ -11,6 +11,7 @@ class ApplicationUserCreationForm(UserCreationForm):
         model = ApplicationUser
         fields = [
             'email',
+            'mobile',
             'sales_tax_rate',
         ]
 

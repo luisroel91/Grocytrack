@@ -16,6 +16,7 @@ class GroceryItem(models.Model):
         max_digits=100,
     )
 
+    """
     upc = models.CharField(
         verbose_name='UPC',
         max_length=12,
@@ -24,12 +25,19 @@ class GroceryItem(models.Model):
         validators=[MinLengthValidator(12)],
         blank=True,
     )
+    """
 
     created_by = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         editable=False,
         on_delete=models.CASCADE,
         related_name="user_items"
+    )
+
+    store_name = models.CharField(
+        verbose_name="List Grocery Store Name",
+        max_length=110,
+        validators=[MinLengthValidator(3)]
     )
 
     # Set string representation

@@ -1,5 +1,6 @@
 # Import DRF generic views
 from rest_framework.viewsets import ModelViewSet
+from rest_framework.generics import ListAPIView, RetrieveAPIView
 from rest_framework import permissions
 
 # Import our models
@@ -11,7 +12,9 @@ from Lists.models import GroceryItemList
 
 from .serializers import GroceryItemSerializer, GroceryItemListSerializer
 
-# Generic views for now
+# Import our schema
+
+from GroceryTracker.schema_view import CustomSchema
 
 
 class GroceryItemViewSet(ModelViewSet):
@@ -40,6 +43,8 @@ class GroceryItemViewSet(ModelViewSet):
 
     permission_classes = (permissions.IsAuthenticated,)
 
+    schema = CustomSchema()
+
 
 class GroceryItemListViewSet(ModelViewSet):
     """
@@ -47,7 +52,7 @@ class GroceryItemListViewSet(ModelViewSet):
     Return a list using its ID
 
     list:
-    Return all lists
+    Return all lists for this user
 
     create:
     Create a list
@@ -61,11 +66,44 @@ class GroceryItemListViewSet(ModelViewSet):
     delete:
     Delete a list if you are its owner
     """
-    queryset = GroceryItemList.objects.all()
+
     serializer_class = GroceryItemListSerializer
 
     permission_classes = (permissions.IsAuthenticated,)
 
+    def get_queryset(self):
+        queryset = GroceryItemList.objects.filter(created_by=self.request.user)
+
+        return queryset
+
+    schema = CustomSchema()
 
 
+class PublicListView(ListAPIView):
+    """
+    get:
+    Get all public lists
+    """
 
+    serializer_class = GroceryItemListSerializer
+
+    def get_queryset(self):
+        public_lists = GroceryItemList.objects.filter(public=True)
+
+        return public_lists
+
+    schema = CustomSchema()
+
+
+class PublicListDetailView(RetrieveAPIView):
+    """
+    get:
+    Get public list by ID
+    """
+    queryset = GroceryItemList.objects.filter(public=True)
+
+    serializer_class = GroceryItemListSerializer
+
+    lookup_field = 'id'
+
+    schema = CustomSchema()
