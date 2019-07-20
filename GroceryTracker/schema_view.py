@@ -78,4 +78,4 @@ class CustomSchema(AutoSchema):
         )
 
 
-schema_view = get_swagger_view(title='Product Testing API')
+schema_view = get_swagger_view(title='Grocytrack API')
