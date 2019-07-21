@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2fa4bec-7e38-4411-80a5-982508ff2a51" name="Default Changelist" comment="Started work on JWT/DRF perms">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lists/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lists/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Users/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Users/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users/managers.py" beforeDir="false" afterPath="$PROJECT_DIR$/Users/managers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Users/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Items/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Items/models.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,22 +35,22 @@
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/GroceryTracker/settings.py">
+            <entry file="file://$PROJECT_DIR$/Users/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="242">
-                  <caret line="45" column="32" lean-forward="true" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
+                <state relative-caret-position="689">
+                  <caret line="60" column="22" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
                   <folding>
-                    <element signature="e#315#324#0" expanded="true" />
+                    <element signature="e#0#28#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Users/models.py">
+            <entry file="file://$PROJECT_DIR$/Items/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="479">
-                  <caret line="60" column="22" lean-forward="true" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
+                <state relative-caret-position="285">
+                  <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
                   <folding>
                     <element signature="e#0#28#0" expanded="true" />
                   </folding>
@@ -66,8 +61,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Users/forms.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="300">
-                  <caret line="20" column="36" lean-forward="true" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+                <state relative-caret-position="255">
+                  <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
                   <folding>
                     <element signature="e#0#70#0" expanded="true" />
                   </folding>
@@ -171,8 +166,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Lists/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="360">
-                  <caret line="24" column="37" lean-forward="true" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
+                <state relative-caret-position="270">
+                  <caret line="24" column="37" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
                   <folding>
                     <element signature="e#0#28#0" expanded="true" />
                   </folding>
@@ -183,8 +178,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Users/managers.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="472">
-                  <caret line="48" column="60" lean-forward="true" selection-start-line="48" selection-start-column="60" selection-end-line="48" selection-end-column="60" />
+                <state relative-caret-position="705">
+                  <caret line="48" column="60" selection-start-line="48" selection-start-column="60" selection-end-line="48" selection-end-column="60" />
                   <folding>
                     <element signature="e#0#57#0" expanded="true" />
                   </folding>
@@ -196,7 +191,7 @@
             <entry file="file://$PROJECT_DIR$/Users/admin.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="395">
-                  <caret line="60" column="9" lean-forward="true" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
+                  <caret line="60" column="9" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
                   <folding>
                     <element signature="e#0#32#0" expanded="true" />
                   </folding>
@@ -273,8 +268,6 @@
         <option value="$PROJECT_DIR$/templates/password_reset.html" />
         <option value="$PROJECT_DIR$/templates/activation.html" />
         <option value="$PROJECT_DIR$/Lists/managers.py" />
-        <option value="$PROJECT_DIR$/Items/models.py" />
-        <option value="$PROJECT_DIR$/Items/models.py" />
         <option value="$PROJECT_DIR$/API/urls.py" />
         <option value="$PROJECT_DIR$/API/serializers.py" />
         <option value="$PROJECT_DIR$/templates/passwordless_email_token.html" />
@@ -293,6 +286,8 @@
         <option value="$PROJECT_DIR$/Users/forms.py" />
         <option value="$PROJECT_DIR$/Users/admin.py" />
         <option value="$PROJECT_DIR$/Users/models.py" />
+        <option value="$PROJECT_DIR$/Items/models.py" />
+        <option value="$PROJECT_DIR$/Items/models.py" />
       </list>
     </option>
   </component>
@@ -307,7 +302,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -349,6 +343,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -439,6 +434,7 @@
       <workItem from="1562705296767" duration="12211000" />
       <workItem from="1562772882021" duration="8551000" />
       <workItem from="1563645399820" duration="2340000" />
+      <workItem from="1563676396202" duration="250000" />
     </task>
     <task id="LOCAL-00001" summary="Update">
       <created>1559603239252</created>
@@ -472,13 +468,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125005000" />
+    <option name="totallyTimeSpent" value="125255000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1057" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49933776" visible="true" weight="0.09211928" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49933776" visible="true" weight="0.092651755" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.50066227" side_tool="true" weight="0.33551198" />
       <window_info id="DB Browser" order="3" />
@@ -655,13 +651,6 @@
     <entry file="file://$PROJECT_DIR$/Lists/views.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Items/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-46">
-          <caret line="2" column="7" selection-start-line="2" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/API/__init__.py" />
     <entry file="file://$PROJECT_DIR$/GroceryTracker/__init__.py" />
     <entry file="file://$PROJECT_DIR$/API/urls.py">
@@ -728,6 +717,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/GroceryTracker/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="45" column="32" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
+          <folding>
+            <element signature="e#315#324#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Users/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#70#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GroceryTracker/schema_view.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1005">
+          <caret line="71" column="28" selection-start-line="71" selection-start-column="28" selection-end-line="71" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$USER_HOME$/.local/share/virtualenvs/Grocytrack-IB1GNDoF/src/drfpasswordless/drfpasswordless/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="990">
@@ -774,6 +790,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Lists/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="24" column="37" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Users/managers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="48" column="60" selection-start-line="48" selection-start-column="60" selection-end-line="48" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/API/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="645">
@@ -787,67 +823,30 @@
     <entry file="file://$PROJECT_DIR$/Lists/tests.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/GroceryTracker/schema_view.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1005">
-          <caret line="71" column="28" selection-start-line="71" selection-start-column="28" selection-end-line="71" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GroceryTracker/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="45" column="32" lean-forward="true" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
-          <folding>
-            <element signature="e#315#324#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Lists/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="37" lean-forward="true" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Users/managers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="48" column="60" lean-forward="true" selection-start-line="48" selection-start-column="60" selection-end-line="48" selection-end-column="60" />
-          <folding>
-            <element signature="e#0#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Users/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="395">
-          <caret line="60" column="9" lean-forward="true" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
+          <caret line="60" column="9" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Users/forms.py">
+    <entry file="file://$PROJECT_DIR$/Users/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="36" lean-forward="true" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+        <state relative-caret-position="689">
+          <caret line="60" column="22" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
           <folding>
-            <element signature="e#0#70#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Users/models.py">
+    <entry file="file://$PROJECT_DIR$/Items/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="60" column="22" lean-forward="true" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
+        <state relative-caret-position="285">
+          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>

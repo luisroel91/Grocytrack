@@ -16,6 +16,12 @@ class GroceryItem(models.Model):
         max_digits=100,
     )
 
+    unit_price = models.DecimalField(
+        verbose_name='Unit Price',
+        decimal_places=2,
+        max_digits=100,
+    )
+
     """
     upc = models.CharField(
         verbose_name='UPC',
