@@ -9,7 +9,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 class CustomUserManager(BaseUserManager):
 
-    def create_user(self, username, email, sales_tax_rate, password, mobile, **extra_fields):
+    def create_user(self, username, email, sales_tax_rate, password, mobile, startup_route, **extra_fields):
 
         # Reject is no email
         if not email:
@@ -22,6 +22,7 @@ class CustomUserManager(BaseUserManager):
             email=email,
             sales_tax_rate=sales_tax_rate,
             mobile=mobile,
+            startup_route=startup_route,
             ** extra_fields,
         )
 
@@ -33,7 +34,7 @@ class CustomUserManager(BaseUserManager):
 
         return user
 
-    def create_superuser(self, username, email, mobile, sales_tax_rate, password, **extra_fields):
+    def create_superuser(self, username, email, sales_tax_rate, mobile, startup_route, password, **extra_fields):
 
         # Set admin permissions for superusers
         extra_fields.setdefault('is_staff', True)
@@ -52,6 +53,7 @@ class CustomUserManager(BaseUserManager):
             email=email,
             sales_tax_rate=sales_tax_rate,
             mobile=mobile,
+            startup_route=startup_route,
             **extra_fields,
         )
 

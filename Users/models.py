@@ -56,11 +56,17 @@ class ApplicationUser(AbstractBaseUser, PermissionsMixin):
     mobile = PhoneNumberField(
     )
 
+    startup_route = models.CharField(
+        verbose_name='Default Route on Login',
+        max_length=10,
+        blank=True
+    )
+
     # Set username/email fields + required fields
     USERNAME_FIELD = 'username'
     EMAIL_FIELD = 'email'
 
-    REQUIRED_FIELDS = ['email', 'sales_tax_rate', 'mobile']
+    REQUIRED_FIELDS = ['email', 'sales_tax_rate', 'mobile', 'startup_route']
 
     # Set object manager
     objects = CustomUserManager()

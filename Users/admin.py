@@ -63,8 +63,9 @@ class ApplicationUserAdmin(UserAdmin):
                 'fields': (
                     'username',
                     'email',
-                    'mobile'
+                    'mobile',
                     'sales_tax_rate',
+                    'startup_route',
                     'password1',
                     'password2',
                 )

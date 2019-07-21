@@ -13,6 +13,7 @@ class ApplicationUserCreationForm(UserCreationForm):
             'email',
             'mobile',
             'sales_tax_rate',
+            'startup_route',
         ]
 
 
@@ -23,4 +24,5 @@ class ApplicationUserChangeForm(UserChangeForm):
         model = ApplicationUser
         fields = [
             'sales_tax_rate',
+            'startup_route',
         ]

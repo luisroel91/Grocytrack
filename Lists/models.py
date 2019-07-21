@@ -49,3 +49,9 @@ class GroceryItemList(TimeStampedModel):
         default=False,
         editable=True,
     )
+
+    amount_budgeted = models.DecimalField(
+        verbose_name='Amount Budgeted',
+        decimal_places=2,
+        max_digits=100
+    )
