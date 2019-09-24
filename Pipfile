@@ -18,7 +18,6 @@ djoser = "*"
 social-auth-app-django = "*"
 gunicorn = "*"
 django-heroku = "*"
-psycopg2 = "*"
 whitenoise = "*"
 django-sendgrid-v5 = "*"
 drf-writable-nested = "*"
@@ -26,6 +25,9 @@ django-phonenumber-field = "*"
 phonenumbers = "*"
 twilio = "*"
 drfpasswordless = {editable = true,git = "https://github.com/luisroel91/django-rest-framework-passwordless.git",ref = "master"}
+psycopg2 = "*"
+werkzeug = "*"
+pyopenssl = "*"
 
 [requires]
 python_version = "3.7"

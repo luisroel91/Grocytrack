@@ -40,12 +40,6 @@ class GroceryItem(models.Model):
         related_name="user_items"
     )
 
-    store_name = models.CharField(
-        verbose_name="List Grocery Store Name",
-        max_length=110,
-        validators=[MinLengthValidator(3)]
-    )
-
     # Set string representation
     def __str__(self):
         return self.name

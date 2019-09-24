@@ -8,8 +8,6 @@ from phonenumber_field.modelfields import PhoneNumberField
 # Import our user object manager
 from .managers import CustomUserManager
 
-from Lists.models import GroceryItemList
-
 
 # Define our user model
 class ApplicationUser(AbstractBaseUser, PermissionsMixin):

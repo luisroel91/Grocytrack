@@ -224,6 +224,8 @@ CORS_ORIGIN_WHITELIST = (
     'https://api.grocytrack.com',
     'https://localhost:3000',
     'http://localhost:8000',
+    # CHANGE THIS ON DEPLOY,
+    'https://localhost:3000',
     )
 
 

@@ -20,7 +20,7 @@ class GroceryItemSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = GroceryItem
-        fields = ('name', 'price', 'store_name', 'id', 'created_by_name', 'created_by')
+        fields = ('name', 'price', 'id', 'created_by_name', 'created_by')
 
     def save(self, **kwargs):
         kwargs["created_by"] = self.fields["created_by"].get_default()
@@ -48,9 +48,9 @@ class GroceryItemListSerializer (WritableNestedModelSerializer):
             'created_by',
             'tax_amount',
             'sub_total',
-            'store_name',
             'total_items',
             'items',
+            'amount_budgeted'
         )
 
     def save(self, **kwargs):
